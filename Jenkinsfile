@@ -23,7 +23,7 @@ pipeline {
             steps {
                 script {
                     // Log in to Docker Hub
-                    docker.withRegistry('https://index.docker.io/v1/', DOCKER_HUB_USERNAME, DOCKER_HUB_PASSWORD) {
+                    docker.withRegistry('https://hub.docker.com/', DOCKER_HUB_USERNAME, DOCKER_HUB_PASSWORD) {
                         // Push Docker image to Docker Hub
                         docker.image("${DOCKER_IMAGE_NAME}:${DOCKER_IMAGE_TAG}").push()
                     }
